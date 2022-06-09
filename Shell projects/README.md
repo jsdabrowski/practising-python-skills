@@ -2,7 +2,7 @@
 
 ## About
 
-The repository will share mini projects which I have developed to practise shell scripts.
+The repository will share mini projects to be developed and to be practise shell scripting.
 
 Here is a list of possible mini-projects which could be useful to anyone:
 
