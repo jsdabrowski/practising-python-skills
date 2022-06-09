@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Goal: copy and changes all the filenames ending in .f77 so that they instead ended in .f90.
+# Constraint: filnename contains only period that is used for sperating the actual name from the ending.
+
+numberOfFiles=0
+inputDirectory=$(pwd)/test_input
+outputDirectory=$(pwd)/test_output
+
+# Clean test_output after one run
+rm $outputDirectory/*
+
+for file in $(ls test_input/*.f77 | cut -d "/" -f 2- | cut -d "." -f 1); do
+
+  cp $(pwd)/test_input/${file}.f77 $(pwd)/test_output/${file}.f90
+  echo Copied and renamed ${file}.f77 to ${file}.f90
+  let numberOfFiles=numberOfFiles+1
+
+done
+
+echo In totoal, ${numberOfFiles} files were copied and renamed.

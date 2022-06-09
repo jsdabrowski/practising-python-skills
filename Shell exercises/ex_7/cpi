@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Context: In many versions of unix there is a -i argument for cp so that you
+# will be prompted for confirmation if you are about to overwrite a file.
+# Goal: Write a script called cpi which will prompt if necessary without
+# using the -i argument. (test)
+
+inputFilePath=$1
+outputLocalisation=$2
+
+echo "You wanna copy $inputFilePath file to $outputLocalisation path"
+
+# Get the actual filename's position from the inputPath
+PositionInputFileInPath=$(echo "$1" | grep -o "/" | wc -l)
+let PositionInputFileInPath=PositionInputFileInPath+1
+
+if [[ -f $outputLocalisation"/"$(echo $inputFilePath | cut -d "/" -f $PositionInputFileInPath) ]]; then
+  echo "The file already existis in the localisation. Do you wanna overwrite it?"
+  echo "Please type letter 'y' if you wanna it, and 'n' otherwise. "
+  read selectedOption
+
+  if [[ "$selectedOption" = "y" ]]; then
+    echo "You decided to overwrite the file. "
+    cp $inputFilePath $outputLocalisation
+    echo "Copied file smoothly."
+
+  else
+    echo "You did not decide to overwrite the file."
+  fi
+
+else
+  cp $inputFilePath $outputLocalisation
+  echo "Copied file smoothly."
+
+fi
