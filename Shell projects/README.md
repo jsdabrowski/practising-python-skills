@@ -4,7 +4,13 @@
 
 The repository will share mini projects which I have developed to practise shell scripts.
 
-Here is a list of possible mini-projects which could be useful to anyone. If you wanna add your idea, feel free to contact me. 
+Here is a list of possible mini-projects which could be useful to anyone:
+
+* ``Pomodoro timer:`` program facilitates pomodoro technique helping you to control your study/work time.
+
+
+
+If you wanna add your idea, feel free to contact me.
 
 
 For any information, please contact the main contributor: Jacek Dąbrowski (j.dabrowski@cs.ucl.ac.uk)
