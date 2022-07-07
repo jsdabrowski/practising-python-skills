@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Goal: Sort /etc/passwd using the uid (first field) as the key. (sort)
-
-sort /etc/passwd -n -k3,3 -t ":"
